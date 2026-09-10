@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 2nd Monthsary, Cuteee Kanmaniii 💖</title>
+    <style>
+        /* Dark, romantic theme optimized for mobile */
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #ff4d6d;
+            font-size: 2.2em;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        .subtitle {
+            color: #ffb3c1;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        .video-card {
+            background-color: #1e1e1e;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 8px 20px rgba(255, 77, 109, 0.15);
+            border: 1px solid #333;
+        }
+        .video-card h3 {
+            color: #ff758f;
+            margin-top: 0;
+        }
+        .video-card p {
+            font-size: 0.9em;
+            color: #cccccc;
+            margin-bottom: 15px;
+        }
+        /* Styling the inline video player */
+        video {
+            width: 100%;
+            border-radius: 12px;
+            outline: none;
+            background-color: #000;
+        }
+        .countdown-container {
+            margin-top: 40px;
+            padding: 20px;
+            border: 2px dashed #ff4d6d;
+            border-radius: 20px;
+            background-color: rgba(255, 77, 109, 0.05);
+        }
+        #timer {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #ff4d6d;
+            margin: 10px 0;
+        }
+        .timer-label {
+            color: #ffb3c1;
+            font-size: 1em;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 0.8em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Chapter 2: The Distance</h1>
+        <p class="subtitle">Happy 2nd Monthsary, bae! 🥀<br>From Vellore to Surathkal to Sri City, you are still my precious girl.</p>
+
+        <!-- VIDEO SECTION 1: THE VELLORE DATE -->
+        <div class="video-card">
+            <h3>Our Best Day (August 5) 🎬</h3>
+            <p>PVR Velocity, Vellore Fort, and a perfect first kiss to hold us over. 💖</p>
+            
+            <!-- Paste your GitHub Issue .mp4 link in the src below -->
+            <video src="YOUR_VELLORE_GITHUB_ISSUE_LINK_HERE.mp4" controls playsinline preload="metadata"></video>
+        </div>
+
+        <!-- COUNTDOWN TIMER TO SEMESTER LEAVE -->
+        <div class="countdown-container">
+            <div class="timer-label">Counting down the days until i get to see you:</div>
+            <div id="timer">Loading...</div>
+            <div class="timer-label">Until I get to see you again.</div>
+        </div>
+
+       
+    </div>
+
+    <!-- JavaScript for the Countdown Timer -->
+    <script>
+        // Set this to the approximate date your semester leaves start! 
+        // Format: "Month DD, YYYY HH:MM:SS"
+        const nextMeetingDate = new Date("Dec 15, 2026 00:00:00").getTime();
+
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = nextMeetingDate - now;
+
+            // Math calculations for days, hours, minutes, and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="timer"
+            document.getElementById("timer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+            // If the countdown is over
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("timer").innerHTML = "I'm at your gate! ❤️";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
